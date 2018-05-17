@@ -5,14 +5,7 @@ library(tidyverse)
 ratfish_data_rounded <- mutate(ratfish_data, rounded_latitude = round(StartLatitude_DD, digits = 2), rounded_longitude = round(StartLongitude_DD, digits = 2)) 
 
 
-ggplot(data = ratfish_data_rounded) +
-  geom_histogram(aes(x = rounded_latitude, y = Ratfish_BiomassDensity.kg.ha.))
 
-
-
-
-ggplot(data = ratfish_data_rounded) +
-  geom_histogram(aes(x = rounded_latitude, y = Ratfish_BiomassDensity.kg.ha.))
 
 
 
@@ -22,6 +15,7 @@ qplot(ratfish_data_rounded$Ratfish_BiomassDensity.kg.ha., geom="histogram")
 
 #a bar version
 ggplot(ratfish_data_rounded, aes(rounded_latitude, Ratfish_BiomassDensity.kg.ha.)) +
-  geom_bar(stat = "summary", fun.y = "mean") 
+  geom_bar(stat = "summary", fun.y = "mean") +
+  theme_classic()
 
 
