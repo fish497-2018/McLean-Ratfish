@@ -18,4 +18,7 @@ ggplot(ratfish_data_rounded, aes(rounded_latitude, Ratfish_BiomassDensity.kg.ha.
   geom_bar(stat = "summary", fun.y = "mean") +
   theme_classic()
 
+ggplot(ratfish_data_rounded, aes(rounded_longitude, Ratfish_BiomassDensity.kg.ha.)) +
+  geom_bar(stat = "summary", fun.y = "mean") +
+  theme_classic()
 
