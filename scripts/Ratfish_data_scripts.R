@@ -2,7 +2,7 @@ ratfish_data <- read.csv("data/Copy of JonMcLean_Ratfish_Tow_Location_Densities(
 
 library(tidyverse)
 
-ratfish_data_rounded <- mutate(ratfish_data, rounded_latitude = round(StartLatitude_DD, digits = 2), rounded_longitude = round(StartLongitude_DD, digits = 2)) 
+ratfish_data_rounded <- mutate(ratfish_data, rounded_latitude = round(StartLatitude_DD, digits = 1), rounded_longitude = round(StartLongitude_DD, digits = 2)) 
 
 
 
@@ -14,6 +14,8 @@ ggplot(ratfish_data_rounded, aes(rounded_latitude, Ratfish_BiomassDensity.kg.ha.
   geom_bar(stat = "summary", fun.y = "mean") +
   theme_classic()
   labs(x = "latitude", y = "Ratfish Biomass", title = "Ratfish Biomass and Latitude")
+  
+ggsave("plots/Ratfishbiomass_by_latitude.jpg")
 
 #Longtitude graph
 ggplot(ratfish_data_rounded, aes(rounded_longitude, Ratfish_BiomassDensity.kg.ha.)) +
@@ -21,3 +23,4 @@ ggplot(ratfish_data_rounded, aes(rounded_longitude, Ratfish_BiomassDensity.kg.ha
   theme_classic() +
   labs(x = "Longitude", y = "Ratfish Biomass", title = "Ratfish Biomass and Longitude")
 
+ggsave("plots/Ratfishbiomass_by_longitude.jpg")
