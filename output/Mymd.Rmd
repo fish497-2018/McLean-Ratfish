@@ -8,7 +8,8 @@ output: html_document
 ##Data
 
 ```{r}
-ratfish_data <- read.csv("data/Copy of JonMcLean_Ratfish_Tow_Location_Densities(4824).csv")
+ratfish_data <- read.csv("../data/Copy of JonMcLean_Ratfish_Tow_Location_Densities(4824).csv")
+head(ratfish_data)
 ```
 
 ##Required packages
