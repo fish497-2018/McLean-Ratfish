@@ -62,7 +62,7 @@ ratfish_data_rounded <- mutate(ratfish_data, rounded_latitude = round(StartLatit
 
 
 
-#Latitude graph
+##Latitude graph
 ```{r, echo = FALSE}
 ggplot(ratfish_data_rounded, aes(rounded_latitude, Ratfish_BiomassDensity.kg.ha.)) +
   geom_bar(stat = "summary", fun.y = "mean") +
@@ -73,7 +73,7 @@ ggplot(ratfish_data_rounded, aes(rounded_latitude, Ratfish_BiomassDensity.kg.ha.
 ```
 
 
-#Longtitude graph
+##Longtitude graph
 ```{r, echo = FALSE}
 ggplot(ratfish_data_rounded, aes(rounded_longitude, Ratfish_BiomassDensity.kg.ha.)) +
   geom_bar(stat = "summary", fun.y = "mean") +
